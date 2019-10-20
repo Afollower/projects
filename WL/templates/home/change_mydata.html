@@ -1,0 +1,35 @@
+{% extends 'login/base.html' %}
+{% block title %}个人信息{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+          <form class='form-register' action="/homepage/change_my_data/" method="post">
+              {% csrf_token %}
+              <h1>编辑我的信息</h1>
+              <div class="form-group">
+                  {{ userdata.user_name.label_tag }}
+                  {{ userdata.user_name }}
+              </div>
+              <div class="form-group">
+                  {{ userdata.email.label_tag }}
+                  {{ userdata.email }}
+              </div>
+              <div class="form-group">
+                  {{ userdata.user_true_name.label_tag }}
+                  {{ userdata.user_true_name }}
+              </div>
+              <div class="form-group">
+                  {{ userdata.user_id.label_tag }}
+                  {{ userdata.user_id }}
+              </div>
+              <div class="form-group">
+                  {{ userdata.user_school.label_tag }}
+                  {{ userdata.user_school }}
+              </div>
+              <button type="reset" class="btn btn-default pull-left">重置</button>
+              <button type="submit" class="btn btn-primary pull-right">提交</button>
+          </form>
+        </div>
+
+    </div>
+{% endblock %}

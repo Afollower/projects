@@ -1,0 +1,36 @@
+{% extends 'login/base.html' %}
+{% block title %}考试报名{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+          <form class='form-register' action="/test/" method="post">
+              <h2 class="text-center">欢迎报名</h2>
+              <div class="form-group">
+                  <label for="exam_type">考试类别：</label>
+                  <select>
+                      <option value="0">四级考试</option>
+                      <option value="1">六级考试</option>
+                   </select>
+              </div>
+              <div class="form-group">
+                  <label for="exam_point">考点选择：</label>
+                  <select>
+                      <option>西南科技大学</option>
+                      <option>某某大学</option>
+                   </select>
+              </div>
+              <div class="form-group">
+                  <label for="number">剩余名额：</label>
+                  <select>
+                      <option>剩余名额</option>
+                   </select>
+              </div>
+              <button type="reset" class="btn btn-default pull-left">取消</button>
+              <button type="submit" class="btn btn-primary pull-right">报名</button>
+          </form>
+        </div>
+    </div>
+
+
+{% endblock %}

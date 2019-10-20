@@ -1,0 +1,44 @@
+{% extends 'login/base.html' %}
+
+{% block title %}英语六级报名{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+          <form class='form-register' action="/homepage/cet_6/" method="post">
+
+              {% if message %}
+                  <div class="alert alert-warning">{{ message }}</div>
+              {% endif %}
+
+              {% csrf_token %}
+
+              <h2 class="text-center">欢迎报名英语六级考试</h2>
+              <p class="text-center">请仔细检查个人信息，确认无误后，填写考点报考！</p>
+              <div class="form-group">
+                  {{ cet6_form.user_name.label_tag }}
+                  {{ cet6_form.user_name }}
+              </div>
+              <div class="form-group">
+                  {{ cet6_form.email.label_tag }}
+                  {{ cet6_form.email }}
+              </div>
+              <div class="form-group">
+                  {{ cet6_form.user_true_name.label_tag }}
+                  {{ cet6_form.user_true_name }}
+              </div>
+              <div class="form-group">
+                  {{ cet6_form.user_id.label_tag }}
+                  {{ cet6_form.user_id }}
+              </div>
+              <div class="form-group">
+                  {{ cet6_form.exam_point.label_tag }}
+                  {{ cet6_form.exam_point }}
+              </div>
+              <button type="reset" class="btn btn-default pull-left">取消</button>
+              <button type="submit" class="btn btn-primary pull-right">报名</button>
+          </form>
+        </div>
+    </div>
+
+
+{% endblock %}

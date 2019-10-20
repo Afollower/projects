@@ -1,0 +1,25 @@
+{% extends 'login/base.html' %}
+{% block title %}我的报名信息{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+            <h2 class="text-center">报名信息查询</h2>
+            <p class="text-center">请按时参加考试！</p>
+            <table class="table">
+                <tr>
+                    <th>已报名考试</th>
+                    <th>考点</th>
+                    <th>开考时间</th>
+<!--                    <th>剩余容量</th>-->
+                </tr>
+                <tr>
+                    <td>{{ exam_entry.exam_type }}</td>
+                    <td>{{ exam_entry.exam_point }}</td>
+                    <td>{{ exam_entry.exam_time }}</td>
+<!--                    <td>{{ exam_entry4.number }}</td>-->
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}

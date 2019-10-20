@@ -1,0 +1,32 @@
+{% extends 'login/base.html' %}
+{% block title %}主页{% endblock %}
+{% block content %}
+    {% if request.session.is_login %}
+
+        {% if message %}
+            <div class="alert alert-warning">{{ message }}</div>
+        {% endif %}
+
+        <h1>你好,{{ request.session.user_name }}！欢迎回来！</h1>
+        <div id="homepage_list" style="float:left;">
+            <a href="/homepage/cet_4/" class="btn btn-default pull-left">
+                <p>英语四级报名</p>
+                <p>Enrollment for CET-4</p>
+            </a>
+            <a href="/homepage/cet_6/" class="btn btn-default pull-left">
+                <p>英语六级报名</p>
+                <p>Enrollment for CET-6</p>
+            </a>
+            <a href="/homepage/my_data/" class="btn btn-default pull-left">
+                <p>我的信息</p>
+                <p>My information</p>
+            </a>
+            <a href="/homepage/query_results/" class="btn btn-default pull-left">
+                <p>报考信息查询</p>
+                <p>Entrance Examination Information Query</p>
+            </a>
+        </div>
+    {% else %}
+    <h1>你尚未登录，只能访问公开内容！</h1>
+    {% endif %}
+{% endblock %}

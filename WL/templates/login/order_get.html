@@ -1,0 +1,59 @@
+{% extends 'login/base.html' %}
+
+{% block title %}订单获取{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+          <form class='order_form' action="/index/order_get/" method="post">
+
+              {% if message %}
+                  <div class="alert alert-warning">{{ message }}</div>
+              {% endif %}
+
+              {% csrf_token %}
+
+              <h2 class="text-center">欢迎下单</h2>
+              <div class="form-group">
+                  {{ order_form.order_kind.label_tag }}
+                  {{ order_form.order_kind}}
+              </div>
+              <div class="form-group">
+                  {{ order_form.weight.label_tag }}
+                  {{ order_form.weight }}
+              </div>
+              <div class="form-group">
+                  {{ order_form.sender_name.label_tag }}
+                  {{ order_form.sender_name }}
+              </div>
+              <div class="form-group">
+                  {{ order_form.sender_id.label_tag }}
+                  {{ order_form.sender_id }}
+              </div>
+              <div class="form-group">
+                  {{ order_form.sender_phone.label_tag }}
+                  {{ order_form.sender_phone }}
+              </div>
+              <div class="form-group">
+                  {{ order_form.sender_loc.label_tag }}
+                  {{ order_form.sender_loc }}
+              </div>
+              <div class="form-group">
+                  {{ order_form.recipient_name.label_tag }}
+                  {{ order_form.recipient_name }}
+              </div>
+              <div class="form-group">
+                  {{ order_form.recipient_phone.label_tag }}
+                  {{ order_form.recipient_phone }}
+              </div>
+              <div class="form-group">
+                  {{ order_form.recipient_loc.label_tag }}
+                  {{ order_form.recipient_loc }}
+              </div>
+
+              <button type="reset" class="btn btn-default pull-left">重置</button>
+              <button type="submit" class="btn btn-primary pull-right">提交</button>
+
+          </form>
+        </div>
+    </div> <!-- /container -->
+{% endblock %}

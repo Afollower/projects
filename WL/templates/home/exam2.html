@@ -1,0 +1,33 @@
+{% extends 'login/base.html' %}
+{% block title %}可报名信息{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+            <h2 class="text-center">报名信息查询</h2>。
+            <p class="text-center">你还未报名！</p>
+            <table class="table">
+                <tr>
+                    <th>考试类别</th>
+                    <th>考点</th>
+                    <th>开考时间</th>
+                    <th>剩余容量</th>
+                </tr>
+                <tr>
+                    <td>{{ exam4.exam_type }}</td>
+                    <td>{{ exam4.exam_point }}</td>
+                    <td>{{ exam4.exam_time }}</td>
+                    <td>{{ exam4.number }}</td>
+                </tr>
+                <tr>
+                    <td>{{ exam6.exam_type }}</td>
+                    <td>{{ exam6.exam_point }}</td>
+                    <td>{{ exam6.exam_time }}</td>
+                    <td>{{ exam6.number }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+{% endblock %}

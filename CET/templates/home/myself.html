@@ -1,0 +1,49 @@
+{% extends 'login/base.html' %}
+{% block title %}个人信息{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+          <form class='form-register' action="/homepage/my_data/">
+              {% csrf_token %}
+
+              <div class="form-group">
+                <div class="col-md-4 text-left"><span>用户名:</span></div>
+                <div class="col-md-8 text-right">{{ request.session.user_name }}</div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-4 text-left"><span>邮箱:</span></div>
+                <div class="col-md-8 text-right">{{ account.email }}</div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-4 text-left"><span>真实姓名:</span></div>
+                <div class="col-md-8 text-right">{{ user.user_true_name }}</div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-4 text-left"><span>身份证号:</span></div>
+                <div class="col-md-8 text-right">{{ user.user_id }}</div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-4 text-left"><span>所在学校:</span></div>
+                <div class="col-md-8 text-right">{{ user.user_school }}</div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-4 text-left"><span>四级成绩:</span></div>
+                <div class="col-md-8 text-right">{{ user.user_f_score }}</div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-4 text-left"><span>六级成绩:</span></div>
+                <div class="col-md-8 text-right">{{ user.user_s_score }}</div>
+              </div>
+              <div class="col-md-8 text-right">
+                  <a href="/homepage/change_my_data/">
+                      <input name="change_my_data" class="btn btn-primary pull-right" type="button" value="修改信息">
+                  </a>
+              </div>
+<!--              <button type="reset" class="btn btn-default pull-left">取消</button>-->
+<!--              <button type="submit" class="btn btn-primary pull-right">修改</button>-->
+          </form>
+        </div>
+
+    </div>
+{% endblock %}
