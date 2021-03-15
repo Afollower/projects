@@ -86,9 +86,9 @@ WSGI_APPLICATION = 'WL.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'wl',                # 数据库名字
-        'USER': 'root',              # 登陆数据库的用户名
-        'PASSWORD': '17761015663',   # 登陆数据库的密码
+        'NAME': '',                # 数据库名字
+        'USER': '',              # 登陆数据库的用户名
+        'PASSWORD': '',   # 登陆数据库的密码
         'HOST': 'localhost',         # 数据库的ip地址
         'PORT': '3306',              # ip地址的端口号，默认（3306）
     }
